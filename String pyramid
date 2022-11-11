@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string str;
+	
+	cout << "Enter the number of rows for the pyramid: ";
+	getline(cin, str);
+	string new_string = str;
+	int num = str.length(); 
+	int len = num;
+	cout << "The length of the string is: " << num << endl;
+	int k{ 0 };
+	for (int i = 1; i <= num; i++)
+	{
+		for (int j = 1; j <= num-i; j++)
+		{
+			cout << " ";
+		}
+		while (k!=(2*i-1))
+		{
+			//cout << "the value of K is: " << k << endl;
+			if (k < num)
+			{
+				cout << str.at(k);
+			}			
+			if (k > num-1)
+			{
+				int m{};
+				m = k - len;
+				cout << str.at(m);
+			}			
+			k++;
+		}
+		k = 0;
+		cout << endl;
+	}
+	return 0;
+}
